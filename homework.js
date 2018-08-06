@@ -83,31 +83,18 @@ function multigreeting(name, language) {
 // with that birthdate was on that date. The dates should be JavaScript
 // Date objects.
 // If the birth date is after than the current date, return nothing.
-// function howOld(birth, current) {
-//     if (birth.getTime() === current.getTime()){
-//         return current.getFullYear() - birth.getFullYear()
-//      }
-//      else if (birth.getTime() >= current.getTime()){
-//         return current.getFullYear() - birth.getFullYear() 
-//      }
-//      else if (birth.getTime() < current.getTime()){
-//         return current.getFullYear() - birth.getFullYear() -1
-//      } else {
-//        return
-//      }
-  
-//   }
 function howOld(birth, current) {
-    var dateToMilliseconds = current - birth;
-    var year = dateToMilliseconds/1000/60/60/24/365
-    var date1 = birth.getMonth() + birth.getDate()
+    var dateToMilliseconds = current.getTime() - birth.getTime();
+    var year = Math.floor(dateToMilliseconds/31557600000)
+    // var date1 = birth.getMonth() + birth.getDate()
     // return date1
-    var date2 = current.getMonth() + current.getDate()
+    // var date2 = current.getMonth() + current.getDate()
     // return date2
-    if (date2 - date1 < 0){
-    return Math.floor(year -1)
+    // return dateToMilliseconds
+    if (year >= 0){
+    return Math.floor(year)
     } else {
-      return Math.floor(year)
+      return 
     }
     
     }
