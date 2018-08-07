@@ -13,13 +13,21 @@ function greeting(name) {
 // 4. Create a function called isOdd that, given a number, will
 // return true if it is odd and false if it is not.
 function isOdd(num) {
-    return (Math.round(num)%2 !== 0)
-}
+    if (Number.isInteger(num) === false){
+    return false
+    } else {
+      return num%2 !== 0
+    }
+  }
 // 5. Create a function called isEven that, given a number, will
 // return true if it is even and false if it is not.
 function isEven(num) {
-    return (Math.ceil(num)%2 === 0)
-}
+    if (Number.isInteger(num) === false){
+        return false
+        } else {
+          return num%2 === 0
+        }
+      }
 // 6. Create a function called fahrenheitToCelsius that takes a
 // Fahrenheit temperature as an argument and returns the
 // temperature in Celsius.
